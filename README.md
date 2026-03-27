@@ -269,7 +269,7 @@ Server will be running at: **`http://localhost:3000`**
 <!--         HOME / DASHBOARD SCREENSHOT                          -->
 <!-- Replace src with your actual dashboard screenshot            -->
 <!-- ============================================================ -->
-<img src="./images/dashboard.png" alt="Dashboard Screenshot" width="100%" />
+<img src=".image.png" alt="Dashboard Screenshot" width="100%" />
 
 <br/>
 
@@ -279,7 +279,7 @@ Server will be running at: **`http://localhost:3000`**
 <!--         LOGIN PAGE SCREENSHOT                                -->
 <!-- Replace src with your login page screenshot                  -->
 <!-- ============================================================ -->
-<img src="image.png" alt="Login Page Screenshot" width="100%" />
+<img src="login.jpg" alt="Login Page Screenshot" width="100%" />
 
 <br/>
 
