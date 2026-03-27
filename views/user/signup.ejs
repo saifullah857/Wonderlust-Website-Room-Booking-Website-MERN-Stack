@@ -1,0 +1,99 @@
+<% layout('layouts/boilerplate') %>
+
+<body>
+  <div class="container py-5">
+    <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+      <div class="card border-0 shadow-sm p-4 rounded-4">
+        <h2 class="text-center mb-4 fw-semibold text-primary">Create Your Account</h2>
+
+        <form action="/signup" method="post" novalidate class="needs-validation">
+
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control"
+              placeholder="Choose a username" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Username is required.</div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control"
+              placeholder="yourname@example.com" required>
+            <div class="valid-feedback">Valid email!</div>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+              placeholder="Enter a strong password" required minlength="6">
+            <div class="valid-feedback">Looks strong!</div>
+            <div class="invalid-feedback">Password must be at least 6 characters.</div>
+          </div>
+
+          <!-- Confirm Password -->
+          
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill fw-semibold">
+              <i class="fa-solid fa-user-plus me-2"></i> Sign Up
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #f8fbff;
+    }
+
+    .card {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-control {
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 6px rgba(13, 110, 253, 0.25);
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(13, 110, 253, 0.3);
+    }
+
+    label {
+      color: #555;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      letter-spacing: 0.5px;
+    }
+  </style>
+
+  <!-- CLIENT-SIDE VALIDATION JS -->
+  
+</body>

@@ -1,0 +1,46 @@
+<footer class="footer mt-auto py-3">
+  <div class="container text-center f-info">
+    <div class="f-info-social mb-2">
+      <i class="fa-brands fa-facebook fa-lg mx-2" style="color: #74C0FC;"></i>
+      <i class="fa-brands fa-instagram fa-lg mx-2" style="color: #ff0000;"></i>
+      <i class="fa-brands fa-linkedin fa-lg mx-2" style="color: #0077b5;"></i>
+    </div>
+
+    <div class="text-muted mb-1">&copy; Wanderlust Private Limited</div>
+
+    <div class="f-info-links">
+      <a href="/privacy" class="text-decoration-none mx-2 text-muted">Privacy</a>
+      <a href="/term" class="text-decoration-none mx-2 text-muted">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Make sure body takes full height */
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Ensure footer sticks to bottom when content is short */
+  .footer {
+    background-color: #f8f9fa;
+    color: #333;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+  /* Keep content area flexible */
+  .container {
+    flex: 1;
+  }
+
+  /* Footer link hover effect */
+  .f-info-links a:hover {
+    color: #0d6efd;
+  }
+</style>

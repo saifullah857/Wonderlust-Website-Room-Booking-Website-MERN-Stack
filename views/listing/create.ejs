@@ -1,0 +1,123 @@
+<% layout('layouts/boilerplate') %>
+
+<body>
+  <div class="container py-3">
+    <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+      <div class="">
+        <h2 class="text-center mb-4 fw-semibold text-primary">Add New Listing</h2>
+
+        <form action="/listing" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Listing Title</label>
+            <input type="text" id="title" name="listing[title]" class="form-control"
+              placeholder="e.g. Cozy Lakeside Cottage" required />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Title is required.</div>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="listing[description]" class="form-control" rows="3"
+              placeholder="Write a short description..." required></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Description cannot be empty.</div>
+          </div>
+
+          <!-- Image URL -->
+          <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="file" id="image" name="listing[image]" class="form-control"
+               />
+           
+          </div>
+
+          <!-- PRICE + COUNTRY ON SAME LINE -->
+          <div class="row">
+            <!-- Price -->
+            <div class="mb-3 col-md-6">
+              <label for="price" class="form-label">Price (PKR)</label>
+              <input type="text" id="price" name="listing[price]" class="form-control"
+                placeholder="e.g. 4500" required />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Price is required.</div>
+            </div>
+
+            <!-- Country -->
+            <div class="mb-3 col-md-6">
+              <label for="country" class="form-label">Country</label>
+              <input type="text" id="country" name="listing[country]" class="form-control"
+                placeholder="e.g. Pakistan" required />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Country is required.</div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="mb-4">
+            <label for="location" class="form-label">City / Location</label>
+            <input type="text" id="location" name="listing[location]" class="form-control"
+              placeholder="e.g. Phool Nagar" required />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Location is required.</div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill fw-semibold">
+              <i class="fa-solid fa-plus me-2"></i> Add Listing
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* --- FORM STYLING --- */
+    body {
+      background-color: #fff;
+    }
+
+    .card {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-control {
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 6px rgba(13, 110, 253, 0.25);
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(13, 110, 253, 0.3);
+    }
+
+    label {
+      color: #555;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</body>

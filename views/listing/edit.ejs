@@ -1,0 +1,119 @@
+<% layout('layouts/boilerplate') %>
+
+  <body>
+    <div class="container py-5">
+      <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+
+        <div class="card border-0 shadow-lg rounded-4 p-4 animate__animated animate__fadeInUp">
+
+          <h2 class="text-center text-primary fw-bold mb-4">Edit Listing</h2>
+
+          <form action="/listing/<%= listing._id %>?_method=PUT" method="POST" class="needs-validation" novalidate
+            enctype="multipart/form-data">
+
+            <!-- Title -->
+            <div class="mb-3">
+              <label for="title" class="form-label fw-semibold">Title</label>
+              <input type="text" class="form-control rounded-3" id="title" name="listing[title]"
+                value="<%= listing.title %>" required>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter a title.</div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="description" class="form-label fw-semibold">Description</label>
+              <textarea class="form-control rounded-3" id="description" name="listing[description]" rows="4"
+                required><%= listing.description %></textarea>
+
+              <div class="valid-feedback">Description looks good!</div>
+              <div class="invalid-feedback">Please enter a description.</div>
+            </div>
+            <div class="mb-3">
+              <img src=<%=listing.image.url %> width="250" length="250" alt="" >
+            </div>
+            <!-- Image URL -->
+            <div class="mb-3">
+              <label for="imageUrl" class="form-label fw-semibold">Upload New Image</label>
+              <input type="file" class="form-control rounded-3" id="imageUrl" name="listing[image]">
+
+            </div>
+
+            <!-- Price -->
+            <div class="mb-3">
+              <label for="price" class="form-label fw-semibold">Price (PKR)</label>
+              <input type="number" class="form-control rounded-3" id="price" name="listing[price]"
+                value="<%= listing.price %>" required>
+              <div class="valid-feedback">Price looks good!</div>
+              <div class="invalid-feedback">Please enter a valid price.</div>
+            </div>
+
+            <!-- Country -->
+            <div class="mb-3">
+              <label for="country" class="form-label fw-semibold">Country</label>
+              <input type="text" class="form-control rounded-3" id="country" name="listing[country]"
+                value="<%= listing.country %>" required>
+              <div class="valid-feedback">Country name is valid!</div>
+              <div class="invalid-feedback">Please enter country name.</div>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-4">
+              <label for="location" class="form-label fw-semibold">Location</label>
+              <input type="text" class="form-control rounded-3" id="location" name="listing[location]"
+                value="<%= listing.location %>" required>
+              <div class="valid-feedback">Location looks good!</div>
+              <div class="invalid-feedback">Please enter a location.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary rounded-pill py-2 fw-semibold shadow-sm edit-btn">
+                <i class="fa-solid fa-pen-to-square me-2"></i> Save Changes
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Custom Styling -->
+    <style>
+      .card {
+        transition: all 0.4s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      input:focus,
+      textarea:focus {
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+        border-color: #0d6efd;
+      }
+
+      .edit-btn {
+        transition: all 0.3s ease;
+      }
+
+      .edit-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+      }
+
+      h2 {
+        letter-spacing: 0.5px;
+      }
+    </style>
+
+    <!-- Bootstrap Validation Script -->
+
+
+  </body>

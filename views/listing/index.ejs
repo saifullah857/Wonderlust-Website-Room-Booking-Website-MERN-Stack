@@ -1,0 +1,215 @@
+<% layout('layouts/boilerplate') %>
+  <style>
+    .filters {
+      display: flex;
+
+      gap: 5px;
+    }
+
+    .filter {
+      text-align: center;
+      margin-right: 2rem;
+      margin-top: 1rem;
+      opacity: 0.7;
+    }
+
+    .filter:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    #text-info {
+      display: none;
+    }
+
+    .custom-switch {
+  width: 70px !important;
+  height: 34px !important;
+  cursor: pointer;
+}
+
+/* Increase thumb size */
+.custom-switch::before {
+  width: 28px !important;
+  height: 28px !important;
+  transform: translateY(3px) translateX(3px) !important;
+}
+
+/* When checked → make background red */
+.custom-switch:checked {
+  background-color: #ff4d4d !important;
+  border-color: #ff4d4d !important;
+}
+
+/* When checked → move thumb & keep it clean white */
+.custom-switch:checked::before {
+  transform: translateX(37px) translateY(3px) !important;
+  background-color: white !important;
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+}
+  </style>
+
+  <body>
+
+
+    <div class="container mt-3">
+      <div class="filters  ">
+        <div class="filter ">
+          <div>
+            <i class="fa-brands fa-firefox fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p> Trending</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-bed fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p> Room</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-city fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p>Iconic Cities</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-mountain-city fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p> Mountain Cities</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-person-swimming fa-xl " style="color: #f90606;"></i>
+          </div>
+          <p> Amazing Pools</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-umbrella-beach fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p>Beach</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-tractor fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p>Farms</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-mountain-sun fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p> Amazing Views</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-brands fa-fort-awesome fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p>Castels</p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-person-hiking fa-xl" style="color: #f90606;"></i>
+          </div>
+          <p>Camping </p>
+        </div>
+        <div class="filter ">
+          <div>
+            <i class="fa-solid fa-snowman fa-lg" style="color: #f90606;"></i>
+          </div>
+          <p>Snow </p>
+        </div>
+        <div class="toggle-container form-check form-switch mb-4 mx-auto d-flex align-items-center gap-1">
+          <input class="form-check-input custom-switch" type="checkbox" id="checkNativeSwitch">
+          <label class="form-check-label fw-semibold " for="checkNativeSwitch">
+          Tax
+          </label>
+        </div>
+
+      </div>
+
+      <div class="row g-4  mt-2">
+        <% for (const listing of allListing) { %>
+          <div class="col-md-4 col-lg-3 col-sm-6">
+            <div class="card listing-card border-0 rounded-4 h-100">
+              <div class="card-img-container">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing image">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title text-primary fw-semibold">
+                  <%= listing.title %>
+                </h5>
+                <p class="card-text text-muted mb-3">
+                  &#x20A8;
+                  <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %>/Night
+                </p>
+                <p id="text-info">+15% GST</p>
+                <a href="/listing/<%= listing._id %>" class="btn btn-outline-primary rounded-pill px-4">
+                  See Details
+                </a>
+              </div>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+    <style>
+      /* ===== CARD STYLING ===== */
+      .listing-card {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+        overflow: hidden;
+        /* ensures shadow + content look clean */
+        background: #fff;
+      }
+
+      /* stronger shadow on hover */
+      .listing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      /* image container hides overflow */
+      .card-img-container {
+        height: 200px;
+        overflow: hidden;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
+      /* smooth zoom effect */
+      .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .listing-card:hover .card-img-container img {
+        transform: scale(1.1);
+      }
+
+      /* optional: subtle hover glow */
+      .listing-card:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+    <script>
+      const toggle = document.getElementById("checkNativeSwitch");
+
+      toggle.addEventListener("change", function () {
+        const gstTexts = document.querySelectorAll("#text-info");
+
+        gstTexts.forEach((p) => {
+          p.style.display = toggle.checked ? "block" : "none";
+        });
+      });
+    </script>
+  </body>

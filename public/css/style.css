@@ -1,0 +1,45 @@
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  
+}
+
+.navbar{
+    height: 5rem;
+    background-color: #fff;
+}
+.fa-regular{
+    color: #fe424d;
+    font-size: 2rem;
+    margin-right: 10px;
+    
+}
+.nav-link{
+    color: black !important;
+}
+.f-info-links a{
+text-decoration: none;
+color: #222222;
+}
+.f-info-links a:hover{
+text-decoration: underline;
+
+}
+.f-info-links, .f-info-social{
+    width: 100%;
+}
+
+.f-info-social i{
+     font-size: 1.5rem;
+     margin-left: 1rem;
+     margin-top: 1rem;
+}
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color:#ebebeb ;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
