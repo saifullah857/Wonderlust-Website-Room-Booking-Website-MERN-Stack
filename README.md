@@ -61,7 +61,7 @@
 <!--           PROJECT OVERVIEW IMAGE                             -->
 <!-- Replace src with your project overview / intro screenshot    -->
 <!-- ============================================================ -->
-<img src="image02.jpg" alt="Project Overview" width="100%" />
+<img src="image.png" alt="Project Overview" width="100%" />
 
 > A full-featured **Express.js** web application / REST API designed as a major project, implementing best practices for backend development including clean architecture, JWT authentication, middleware chaining, error handling, and MongoDB integration.
 
@@ -269,7 +269,7 @@ Server will be running at: **`http://localhost:3000`**
 <!--         HOME / DASHBOARD SCREENSHOT                          -->
 <!-- Replace src with your actual dashboard screenshot            -->
 <!-- ============================================================ -->
-<img src=".image.png" alt="Dashboard Screenshot" width="100%" />
+<img src="image.png" alt="Dashboard Screenshot" width="100%" />
 
 <br/>
 
